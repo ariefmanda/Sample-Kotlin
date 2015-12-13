@@ -12,7 +12,7 @@ import com.kevicsalazar.emptykotlinproject.ui.ActivityComponent
 public abstract class BaseActivity : AppCompatActivity() {
 
     /**
-     * The onCreate base will set the view specified in [.getLayout] and will
+     * The onCreate base will set the view specified in [layout] and will
      * inject dependencies and views.
      */
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +43,7 @@ public abstract class BaseActivity : AppCompatActivity() {
     protected abstract val presenter: BasePresenter<*>?
 
     /**
-     * Setup Component
+     * This method will setup the injector and will commit the dependencies injections.
      */
     protected abstract fun setupComponent(component: ActivityComponent)
 
