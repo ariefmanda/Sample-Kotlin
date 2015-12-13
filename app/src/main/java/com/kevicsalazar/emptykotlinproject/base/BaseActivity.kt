@@ -11,15 +11,13 @@ import com.kevicsalazar.emptykotlinproject.ui.ActivityComponent
 
 public abstract class BaseActivity : AppCompatActivity() {
 
-    protected var component: ActivityComponent? = null;
-
     /**
      * The onCreate base will set the view specified in [.getLayout] and will
      * inject dependencies and views.
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        component = ActivityComponent.Initializer.init(this)
+        setupComponent(ActivityComponent.Initializer.init(this))
         setContentView(layout)
         presenter
     }
